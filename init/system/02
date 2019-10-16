@@ -1,0 +1,3 @@
+#you can replace $1 by the hostname you want
+#also you can add it as a parametre
+eval sudo hostname $1 | hostname

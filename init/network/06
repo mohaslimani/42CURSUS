@@ -1,0 +1,2 @@
+/etc/resolv.conf
+#ce fichier contient l'adresse IP du premier DNS a visiter pour rechercher un domaine/ip

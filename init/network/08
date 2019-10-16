@@ -1,0 +1,11 @@
+#pour trouver l hebergeur de slash16.org j'ai visiter le site hostingchecker.com et rechercher slash16.org
+#l hebergeur est 
+Amazon Web Services
+#ou utiliser la commande
+#whois slash16.org
+#cette command me donne just 
+#Name Server: NS-1236.AWSDNS-26.ORG
+#Name Server: NS-144.AWSDNS-18.COM
+#Name Server: NS-686.AWSDNS-21.NET
+#Name Server: NS-1989.AWSDNS-56.CO.UK 
+#as a Name server

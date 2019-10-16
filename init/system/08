@@ -1,0 +1,8 @@
+#you should first generate the key in your mac
+#ssh-keygen
+#then copy it with
+#ssh-copy-id user@ip
+#now you have the key in your debian in
+~/.ssh/authorized_keys
+#this work will give the acces to the machine when ever you need
+#with your own password or without any

@@ -1,0 +1,3 @@
+#add the username as a parameter
+#or replace it in the script
+sudo adduser $1

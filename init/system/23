@@ -1,0 +1,6 @@
+#sudo adduser <username>
+#su <username> to access to it
+#in your mac
+#ssh user@your_ip
+#they ask the password
+#now you can do the same process to add and access a user

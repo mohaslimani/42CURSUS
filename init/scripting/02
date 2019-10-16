@@ -1,0 +1,4 @@
+#kill all process made by <user> == $1
+sudo pkill -u $1
+#now delete the user with all his files
+sudo userdel -rfRZ $1

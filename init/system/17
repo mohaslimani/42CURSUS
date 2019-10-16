@@ -1,0 +1,10 @@
+#in your virtual machine
+#sudo apt-get install ssh
+#sudo service ssh start
+#ip a
+#in your mac the command is
+ssh user@$1
+#the $1 is the ip
+#you get the ip from ip a command
+#tapez yes
+#then the password of the virtual machine (live)

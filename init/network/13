@@ -1,0 +1,2 @@
+#nslookup 10.12.3.12 | awk '/name/{print $4}' | rev | cut -c 2- | rev
+e2r3p12.1337.ma

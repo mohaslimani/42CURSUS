@@ -1,0 +1,3 @@
+sudo kill $1
+#you have to replace $1 by the pid that you get from 
+#jobs && jobs -p or pidof <command>

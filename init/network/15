@@ -1,0 +1,13 @@
+#vim /etc/hosts
+#add a new line with <46.19.122.85 intra.42.fr>
+#the file after modifying it
+
+10.23.1.1       cdn.42.fr
+10.23.1.1       cdn.intra.42.fr
+127.0.0.1       localhost
+255.255.255.255 broadcasthost
+::1             localhost
+46.19.122.85	intra.42.fr
+
+#NOW when we hit intra.42.fr the browser will link us to a Red Hat Enterprise Linux Test Page
+#prod1-hadopi-web.integra.fr

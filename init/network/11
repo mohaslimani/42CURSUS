@@ -1,0 +1,5 @@
+#we know that the gateway ..254.254 is an IP of the switch that link us with the router
+#and iam is the provider network for 1337
+#so we use traceroute command to find the link between those two
+#its the network address translation (NAT server)
+#its a method of remapping one IP address(intern) into another(external)

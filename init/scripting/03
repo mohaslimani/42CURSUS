@@ -1,0 +1,178 @@
+
+#!/bin/bash
+#unset any variable which system may be using
+# clear the screen
+clear
+echo "
+# **************************************************************************** #
+#                                                                              #
+#    Script 03                                   ___   _____   _____   _____   #
+#                                               |_  | |___  | |___  | |___  |  #
+#    By: msoulaim <marvin@42.fr>                  | |    _| |    _| |     / /  #
+#                                                 | |   |_  {   |_  {    / /   #
+#    Created: 2019/07/24 01:07:21 by msoulaim     | |  ___| |  ___| |   / /    #
+#    Updated: 2019/07/24 01:07:23 by msoulaim     |_| |_____/ |_____/  /_/     #
+#                                                                              #
+# **************************************************************************** #"
+
+echo "\e[35m\n\n
+ _   _   _____   _       _       _____       __    __  _____   _   _  
+| | | | | ____| | |     | |     /  _  \      \ \  / / /  _  \ | | | | 
+| |_| | | |__   | |     | |     | | | |       \ \/ /  | | | | | | | | 
+|  _  | |  __|  | |     | |     | | | |        \  /   | | | | | | | | 
+| | | | | |___  | |___  | |___  | |_| |        / /    | |_| | | |_| | 
+|_| |_| |_____| |_____| |_____| \_____/       /_/     \_____/ \_____/\n\n			\n\e[92mEntrer ??" 
+
+read hi
+clear
+
+echo "wait for update plz"
+sudo apt-get update | grep -v ''
+sudo apt-get install ssh -y | grep -v ''
+sudo apt-get install net-tools -y | grep -v ''
+sudo apt-get install curl -y | grep -v ''
+sudo apt install speedtest-cli -y | grep -v ''
+clear
+
+num=1
+
+while [ $num != 0 ]
+do
+	clear
+	echo "\e[35m
+****************************************************************************
+*	
+*	\e[96m`date "+%H:%M   %d/%m/%y"` \e[35m
+*
+*	1 - know you IP adress.
+*
+*	2 - search for your MAC adress.
+*
+*	3 - to know the broadcast.
+*
+*	4 - get all IPs on your same network.
+*
+*	5 - know the name and version of your System
+*
+*	6 - add a new user
+*
+*	7 - test if you are connected to internet
+*
+*	8 - know your exernal IP
+*
+*	9 - Check RAM, SWAP and DISK usage
+*
+*	10 - speed of internet, the provider and another information
+*
+*	0 - exit :(
+*"
+
+	read -p '**************************************** can i have your choice  : ' num
+
+if [ $num = 0 ]
+then
+	clear
+	echo '\e[94m
+?$$  "$N        $$$  ^#$            $              d$*  "$d        $$F  "$r   
+ $$   $$k       9$$                d$N            $$F     *        $$>       
+ $$   $$F       9$$  :             $$$r          $$$               $$>       
+ $$   $$        9$$.e$            . #$$          $$$               $$L.$F     
+ $$**#"         9$$ ^$            f  $$L         $$$               $$>  F     
+ $$             9$$              .    $$         $$$               $$>       
+ $$             9$$     "        P""""$$N         $$r     J        $$>    x   
+{$$             9$$   .$        .      $$         ^$$.   d$        $$r   dF   
+""""            """"""""        ""    """"           """"         """"""""    
+                                                                              
+                     .....               d*##$.                               
+                   zP"""""$e.           $"    $o                              
+                  4$        $          $"      $                              
+                   $         $        J$       $F                             
+                    b        $k       $>       $                              
+                    $k        $r     J$       d$                              
+                     $         $     $"       $~                              
+                      $        "$    $E       $                               
+                      $         $L   $"      $F ...                           
+                       $.       4B   $      $$$*"""*b                         
+                        $        $.  $$     $$      $F                        
+                        "$       R$  $F     $"      $                         
+                         $k      ?$ u*     dF      .$                         
+                         ^$.      $$"     z$      u$$$$e                      
+                          #$b             $E.dW@e$"    ?$                     
+                           #$           .o$$# d$$$$c    ?F                    
+                            $      .d$$#" . zo$>   #$r .uF                    
+                            $L .u$*"      $&$$$k   .$$d$$F                    
+                             $$"            ""^"$$$P"$P9$                     
+                            JP              .o$$$$u:$P $$                     
+                            $          ..ue$"      ""  $"                     
+                           d$          $F              $                      
+                           $$     ....udE             4B                      
+                            #$    """"` $r            @$                      
+                             ^$L         $            $F                      
+                               RN        4N           $                       
+                                *$b                  d$                       
+                                 $$k                 $F                       
+                                  $$b                $F                       
+                                   $                 $F                       
+                                    $                $                        
+                                    $L               $                        
+                                     $               $                        
+                                     $               $'
+	break
+elif [ $num = 1 ]
+then
+	echo "\e[33myou IP is :"
+	sudo ifconfig | awk '/inet / && /10/{print $2}'
+	read hi
+elif [ $num = 2 ]
+then
+	echo "\e[33myour MAC adress is :"
+	sudo ifconfig | awk '/ether /{print $2}'
+	read hi
+elif [ $num = 3 ]
+then
+	echo "\e[33myou broadcast is :"
+	sudo ifconfig | awk '/broadcast/{print $6}'
+	read hi
+elif [ $num = 4 ]
+then
+	echo "\e[33mthos are the IPs"
+	ping -b -c 2 10.12.255.255 | awk '/from/{print$4}'
+	read -p 'DONE' hi
+elif [ $num = 5 ]
+then
+	echo "\e[33m"
+	cat /etc/issue
+	read hi
+elif [ $num = 6 ]
+then
+	echo "\e[33m the name of this new user"
+	read username	
+	sudo adduser $username
+	echo "DONE!"
+	read hi
+elif [ $num = 7 ]
+then
+	echo "\e[32m\n"
+	ping -c 1 google.com && echo "\e[32myour internet is Connected" || echo "\e[32myour internet is Disconnected"
+	read hi
+elif [ $num = 8 ]
+then
+	echo "\e[32myour external ip is : "
+	sudo curl ipecho.net/plain
+	read hi
+elif [ $num = 9 ]
+then
+	echo "\e[32mRAM, SWAP and DISK usage"
+	free -h && df -h
+	read hi
+elif [ $num = 10 ]
+then
+	echo "\e[32m\n"
+	speedtest
+	read hi	
+else
+        echo "\e[96m\nAucun des tests précédents n'a été vérifié"
+	read hi
+fi
+
+done

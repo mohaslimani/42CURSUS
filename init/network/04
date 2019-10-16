@@ -1,0 +1,1 @@
+eval netstat -rn | awk '/default/ && /en0/{print}'

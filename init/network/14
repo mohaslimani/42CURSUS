@@ -1,0 +1,3 @@
+/etc/hosts
+#this is a file contain a small local DNS
+#to find it search for system configuration folder of any Unix system, then for hosts

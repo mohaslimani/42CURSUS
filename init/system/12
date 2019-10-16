@@ -1,0 +1,1 @@
+sudo du -h -d1 /var
