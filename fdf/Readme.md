@@ -1,3 +1,6 @@
+for full description see 
+Proposition de projet.pdf
+
 FDF
 
 FDF is a 3D Wireframe Viewer for macOS.
