@@ -1,3 +1,3 @@
 # 42CURSUS
 
-![alt text](https://www.42.fr/wp-content/uploads/2018/02/42-gamification-pedagogie.jpg)
+![alt text](https://www.42.us.org/images/galaxy.jpg)
