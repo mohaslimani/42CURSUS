@@ -1,3 +1,3 @@
 # 42CURSUS
 
-![alt text](https://github.com/mohaslimani/42CURSUS/blob/master/2020-11-15.png)
+![alt text](https://github.com/lazrekyasser/42Cursus/blob/main/2020-11-17.png)
