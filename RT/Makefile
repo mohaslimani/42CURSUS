@@ -122,7 +122,7 @@ INCS = -I $(LIBFT_DIR) -I $(XML_DIR) -I $(VEC_DIR)
 
 all: $(NAME)
 
-$(NAME): $(OBJS_DIR) $(OBJ)
+$(NAME): $(OBJS_DIR) $(OBJ) xpm
 	@echo "$(CLEAR_LINE)$(_BLUE_COL)Compiling libraries$(_END_COL)"
 	@make libmlx.a -C $(MLX_DIR) 2>/dev/null
 	@make libft.a -C $(LIBFT_DIR)
@@ -139,6 +139,9 @@ COMPILE_OBJECT = gcc -I headers $(CFLAGS) $(INCS) -o $@ -c $< && echo "$(OK_STRI
 
 objs/%.o: srcs/%.c headers/rt.h headers/rt_define.h headers/rt_struct.h
 	@echo "$(CLEAR_LINE)$(_BLUE_COL)[$(NAME)]$(_CYAN_COL) Compiling [$(_END_COL)$(_YELLOW_COL)$<$(_END_COL)$(_CYAN_COL)] ==> [$(_YELLOW_COL)$@$(_END_COL)$(_CYAN_COL)] $(_END_COL)`$(COMPILE_OBJECT)`$(BEGIN_LINE)"
+
+xpm : xpm/
+	unzip xpm.zip
 
 clean:
 	@rm -rf $(OBJS_DIR) && echo "$(_YELLOW_COL)Deleting objects...$(_END_COL)"
