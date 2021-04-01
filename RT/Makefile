@@ -140,8 +140,13 @@ COMPILE_OBJECT = gcc -I headers $(CFLAGS) $(INCS) -o $@ -c $< && echo "$(OK_STRI
 objs/%.o: srcs/%.c headers/rt.h headers/rt_define.h headers/rt_struct.h
 	@echo "$(CLEAR_LINE)$(_BLUE_COL)[$(NAME)]$(_CYAN_COL) Compiling [$(_END_COL)$(_YELLOW_COL)$<$(_END_COL)$(_CYAN_COL)] ==> [$(_YELLOW_COL)$@$(_END_COL)$(_CYAN_COL)] $(_END_COL)`$(COMPILE_OBJECT)`$(BEGIN_LINE)"
 
+#zipped by
+#zip -r -s 20 xpm.zip xpm
+#every zipped part has 20mo max
+
 xpm : xpm/
-	unzip xpm.zip
+	zip -s 0 xpm.zip --out all_xpm.zip
+	unzip all_xpm.zip
 
 clean:
 	@rm -rf $(OBJS_DIR) && echo "$(_YELLOW_COL)Deleting objects...$(_END_COL)"
@@ -155,6 +160,8 @@ fclean: clean
 	@make fclean -C $(LIBFT_DIR)
 	@make fclean -C $(XML_DIR)
 	@make fclean -C $(VEC_DIR)
+	rm -rf all_xpm.zip
+	rm -rf xpm
 
 re: fclean all
 
